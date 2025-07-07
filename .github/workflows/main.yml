@@ -62,7 +62,6 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
         run: echo "${DOCKER_PASSWORD}" | docker login -u " ${DOCKERHUB_USER}" --password-stdin
 
-
       - name: Push Tagged Docker Image
 
         run: docker push $DOCKERHUB_USER/$DOCKER_IMAGE:$IMAGE_TAG
