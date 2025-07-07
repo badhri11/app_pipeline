@@ -14,11 +14,15 @@ jobs:
 
       - name: Extract Blueprint Variables
         run: |
-          bash ./extract.sh
+          source ./extract.sh
           echo "DOCKER_IMAGE=$DOCKER_IMAGE" >> $GITHUB_ENV
           echo "DOCKER_USER=$DOCKER_USER" >> $GITHUB_ENV
           echo "EC2_IP=$EC2_IP" >> $GITHUB_ENV
           echo "EMAIL=$EMAIL" >> $GITHUB_ENV
+          env | grep DOCKER
+          env | grep EC2
+          env | grep EMAIL
+        shell: bash
 
       - name: Set Up Python
         uses: actions/setup-python@v5
