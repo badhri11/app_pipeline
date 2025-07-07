@@ -3,7 +3,7 @@ language: python
 docker:
   enabled: true
   dockerfile_path: ./Dockerfile
-  image_name: tech-blog-app
+  image_name: demo-app
   registry: docker.io
   dockerhub_user: bat30
   dockerhub_repo: tech-blog-app
