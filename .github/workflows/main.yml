@@ -54,7 +54,7 @@ jobs:
         shell: bash
 
       - name: Build Docker Image
-        run: docker build -t $DOCKER_USER/$DOCKER_IMAGE:$IMAGE_TAG .
+        run: docker build -t $DOCKER_IMAGE:$IMAGE_TAG .
 
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u $DOCKER_USER --password-stdin
