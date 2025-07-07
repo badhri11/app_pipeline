@@ -1,0 +1,7 @@
+version: '3'
+services:
+  tech-blog-app:
+    image: badhri11/tech-blog-app:${IMAGE_TAG}
+    ports:
+      - "80:5000"
+    restart: always

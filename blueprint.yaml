@@ -1,0 +1,17 @@
+project_name: tech-blog-app
+language: python
+docker:
+  enabled: true
+  dockerfile_path: ./Dockerfile
+  image_name: tech-blog-app
+  registry: docker.io
+  dockerhub_user: badhri11
+  dockerhub_repo: tech-blog-app
+unit_test:
+  enabled: true
+trivy_scan: true
+deploy:
+  ec2: true
+  ec2_ip: "ec2-13-233-15-100.ap-south-1.compute.amazonaws.com"
+notification:
+  email: "you@example.com"
