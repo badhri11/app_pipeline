@@ -63,10 +63,13 @@ jobs:
         run: echo "${DOCKER_PASSWORD}" | docker login -u " ${DOCKERHUB_USER}" --password-stdin
 
       - name: Push Tagged Docker Image
-
+        env:
+          DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
         run: docker push $DOCKERHUB_USER/$DOCKER_IMAGE:$IMAGE_TAG
 
       - name: Push as latest (optional)
+        env:
+          DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
         run: |
           docker tag $DOCKER_IMAGE:$IMAGE_TAG bat30/$DOCKER_IMAGE:latest
           docker push bat30/$DOCKER_IMAGE:latest
