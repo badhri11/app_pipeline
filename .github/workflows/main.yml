@@ -59,7 +59,7 @@ jobs:
       - name: Login to DockerHub
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-        run: echo "${DOCKER_PASSWORD}" | docker login -u "bat30" --password-stdin
+        run: echo "${DOCKER_PASSWORD}" | docker login -u "${{ vars.DOCKERHUB_USER }}" --password-stdin
 
 
       - name: Push Tagged Docker Image
