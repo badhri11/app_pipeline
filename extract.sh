@@ -8,7 +8,7 @@ extract_value() {
 
 export PROJECT_NAME=$(extract_value "project_name")
 export DOCKER_IMAGE=$(extract_value "image_name")
-export DOCKER_USER=$(extract_value "bat30")
+export DOCKER_USER=$(extract_value "docker_user")
 export DOCKER_REPO=$(extract_value "dockerhub_repo")
 export EC2_IP=$(extract_value "ec2_ip")
 export EMAIL=$(extract_value "email")

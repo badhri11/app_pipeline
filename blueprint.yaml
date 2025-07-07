@@ -5,7 +5,7 @@ docker:
   dockerfile_path: ./Dockerfile
   image_name: tech-blog-app
   registry: docker.io
-  dockerhub_user: badhri11
+  dockerhub_user: bat30
   dockerhub_repo: tech-blog-app
 unit_test:
   enabled: true
