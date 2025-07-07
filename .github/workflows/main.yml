@@ -63,12 +63,12 @@ jobs:
 
 
       - name: Push Tagged Docker Image
-        run: docker push $DOCKER_USER/$DOCKER_IMAGE:$IMAGE_TAG
+        run: docker push $dockerhub_user/$DOCKER_IMAGE:$IMAGE_TAG
 
       - name: Push as latest (optional)
         run: |
-          docker tag $DOCKER_USER/$DOCKER_IMAGE:$IMAGE_TAG $DOCKER_USER/$DOCKER_IMAGE:latest
-          docker push $DOCKER_USER/$DOCKER_IMAGE:latest
+          docker tag $DOCKER_IMAGE:$IMAGE_TAG bat30/$DOCKER_IMAGE:latest
+          docker push bat30/$DOCKER_IMAGE:latest
 
       - name: Trivy Vulnerability Scan
         uses: aquasecurity/trivy-action@master
